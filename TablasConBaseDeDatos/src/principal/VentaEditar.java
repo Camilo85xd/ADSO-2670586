@@ -300,8 +300,8 @@ public class VentaEditar extends javax.swing.JFrame {
                 respuestaRegistro = "El usuario no pudo Actualizarse";
 
             }
-            TablaBasica tablaBasica = new TablaBasica();
-            EditadoRespuesta respuestaEditor = new 
+           
+            EditadoRespuesta editadoVentana = new EditadoRespuesta(respuestaRegistro);
             setVisible(false);
         }                                     
     }//GEN-LAST:event_agregarActionPerformed

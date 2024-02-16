@@ -37,7 +37,7 @@ public class TablaBasica extends javax.swing.JFrame {
     
     public void initAlernComponents(){
         setVisible(true);
-        setSize( 700, 700 );
+        pack();
         setLocationRelativeTo(null);
         
         modelo =  (DefaultTableModel) this.TablaDatos.getModel();
@@ -87,7 +87,19 @@ public class TablaBasica extends javax.swing.JFrame {
             btnDelete.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    modelo.removeRow(posicion2);
+                    boolean respuesta = basedatos.EliminarPersona(documento);
+                    System.out.println(respuesta);
+
+                String respuestaRegistro = "";
+                if(respuesta = true){
+                    respuestaRegistro = "El usuario ha sido Eliminado correctamente";
+                } else{
+
+                    respuestaRegistro = "El usuario no pudo Eliminarse";
+
+                }
+                RespuestaDelete tablaDelete = new RespuestaDelete(respuestaRegistro);
+                setVisible(false);
                 }
             });
             
@@ -503,15 +515,26 @@ public class TablaBasica extends javax.swing.JFrame {
                 btnDelete.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        
-                        
-                        
+                        boolean respuesta = basedatos.EliminarPersona(documento);
+                    System.out.println(respuesta);
+
+                    String respuestaRegistro = "";
+                    if(respuesta = true){
+                        respuestaRegistro = "El usuario ha sido Eliminado correctamente";
+                    } else{
+
+                        respuestaRegistro = "El usuario no pudo Eliminarse";
+
+                    }
+                    RespuestaDelete tablaDelete = new RespuestaDelete(respuestaRegistro);
+                    setVisible(false);                        
                     }
                 });
                 Object data[] = new Object[]{documento, nombres, apellidos, telefono, correo, btnEdit, btnDelete};
                 modelo.addRow(data);
                 
                 RespuestaIngreso respuestaxd = new RespuestaIngreso(respuestaRegistro);
+                setVisible(false);
             }            
         }                        
     }//GEN-LAST:event_agregarActionPerformed
