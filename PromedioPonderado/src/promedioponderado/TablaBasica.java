@@ -1,6 +1,5 @@
 
 package promedioponderado;
-
 import javax.swing.DefaultListModel;
 
 
