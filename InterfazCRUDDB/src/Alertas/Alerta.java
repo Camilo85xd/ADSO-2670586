@@ -1,5 +1,5 @@
 
-package interfazcruddb;
+package Alertas;
 
 public class Alerta extends javax.swing.JFrame {
 

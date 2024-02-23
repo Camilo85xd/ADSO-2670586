@@ -1,6 +1,9 @@
 
 package interfazcruddb;
 
+import Alertas.AlertaUsuarioRepetido;
+import Alertas.Alerta;
+import Alertas.RespuestaIngreso;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -22,9 +25,12 @@ public class Crear extends javax.swing.JFrame {
     public Crear() {
         this.setContentPane(fondo);
         initComponents();
+        ImageIcon icono = new ImageIcon(getClass().getResource("/imagenes/sena.png"));
+        setIconImage(icono.getImage());
         setVisible(true);
         pack();
-        setLocationRelativeTo(null);       
+        setLocationRelativeTo(null);
+        setTitle("Crear usuario");
     }
 
     
@@ -346,7 +352,7 @@ public class Crear extends javax.swing.JFrame {
             }else if(contadorAutenticado == 5){
 
                 boolean respuesta = basedatos.insertarPersona(documento, nombres, apellidos, telefono, direccion, correo);
-                System.out.println(respuesta);
+                
                 
                 String respuestaRegistro = "";
                 if(respuesta = true){
@@ -370,41 +376,6 @@ public class Crear extends javax.swing.JFrame {
             }            
         }                        
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Crear.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Crear.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Crear.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Crear.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Crear().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField campoApellidos;

@@ -1,6 +1,7 @@
 
 package interfazcruddb;
 
+import Alertas.ConfirmacionDelete;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -15,7 +16,8 @@ public class DocumentoEliminar extends javax.swing.JFrame {
     
     public DocumentoEliminar() {
         this.setContentPane(fondo);
-        
+        ImageIcon icono = new ImageIcon(getClass().getResource("/imagenes/sena.png"));
+        setIconImage(icono.getImage());
         initComponents();
         setVisible(true);
         setLocationRelativeTo(null); 

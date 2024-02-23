@@ -1,6 +1,7 @@
 
-package interfazcruddb;
+package Alertas;
 
+import interfazcruddb.Menu;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;

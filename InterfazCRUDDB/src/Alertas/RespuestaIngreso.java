@@ -1,20 +1,24 @@
 
-package interfazcruddb;
+package Alertas;
 
+import interfazcruddb.Menu;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 
-public class RespuestaDelete extends javax.swing.JFrame {
+public class RespuestaIngreso extends javax.swing.JFrame {
 
-   FondoPanel fondo = new FondoPanel();
-    public RespuestaDelete(String respuesta) {
+    FondoPanel fondo = new FondoPanel();
+    
+    public RespuestaIngreso(String respuestaRecibida) {
         this.setContentPane(fondo);
+        
         initComponents();
+        
+        etqRespuesta.setText(respuestaRecibida);
         setLocationRelativeTo(null);
-        EtqRespuesta.setText(respuesta);
         setVisible(true);
         
     }
@@ -25,7 +29,7 @@ public class RespuestaDelete extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        EtqRespuesta = new javax.swing.JLabel();
+        etqRespuesta = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -33,10 +37,10 @@ public class RespuestaDelete extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 0));
         jPanel1.setOpaque(false);
 
-        EtqRespuesta.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        EtqRespuesta.setForeground(new java.awt.Color(255, 255, 255));
-        EtqRespuesta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        EtqRespuesta.setText("jLabel1");
+        etqRespuesta.setFont(new java.awt.Font("Segoe UI Black", 0, 20)); // NOI18N
+        etqRespuesta.setForeground(new java.awt.Color(255, 255, 255));
+        etqRespuesta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        etqRespuesta.setText("jLabel1");
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -55,21 +59,21 @@ public class RespuestaDelete extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(260, 260, 260)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addComponent(etqRespuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(EtqRespuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                        .addGap(237, 237, 237)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
-                .addComponent(EtqRespuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addContainerGap(51, Short.MAX_VALUE)
+                .addComponent(etqRespuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                .addGap(51, 51, 51))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -91,14 +95,14 @@ public class RespuestaDelete extends javax.swing.JFrame {
         Menu tablaBasica = new Menu();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    
-    
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel EtqRespuesta;
+    private javax.swing.JLabel etqRespuesta;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
     class FondoPanel extends JPanel{
         
         private Image imagen;

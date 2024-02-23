@@ -1,6 +1,8 @@
 
 package interfazcruddb;
 
+import Alertas.EditadoRespuesta;
+import Alertas.Alerta;
 import javax.swing.JCheckBox;
 import javax.swing.table.DefaultTableModel;
 import interfazcruddb.DocumentoEditar;
@@ -17,8 +19,10 @@ public class VentaEditar extends javax.swing.JFrame {
     public VentaEditar( String documento,String nombres,String apellidos,String telefono,String direccion, String correo) {
         this.setContentPane(fondo);
         initComponents();
-        
+        ImageIcon icono = new ImageIcon(getClass().getResource("/imagenes/sena.png"));
+        setIconImage(icono.getImage());
         setVisible(true);
+        setTitle("Editar usuario");
         
         String documentor = documento;
         String nombresr = nombres;
@@ -337,7 +341,10 @@ public class VentaEditar extends javax.swing.JFrame {
     }//GEN-LAST:event_campoDocumentoActionPerformed
 
     private void agregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar1ActionPerformed
-        // TODO add your handling code here:
+        
+        setVisible(false);
+        Menu ventana = new Menu();
+        
     }//GEN-LAST:event_agregar1ActionPerformed
 
     

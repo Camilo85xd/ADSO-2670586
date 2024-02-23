@@ -1,5 +1,5 @@
 
-package interfazcruddb;
+package Alertas;
 
 
 public class AlertaUsuarioRepetido extends javax.swing.JFrame {

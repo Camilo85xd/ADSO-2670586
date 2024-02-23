@@ -16,6 +16,8 @@ public class DocumentoEditar extends javax.swing.JFrame {
         this.setContentPane(fondo);
         
         initComponents();
+        ImageIcon icono = new ImageIcon(getClass().getResource("/imagenes/sena.png"));
+        setIconImage(icono.getImage());
         setVisible(true);
         setLocationRelativeTo(null); 
       
@@ -127,9 +129,7 @@ public class DocumentoEditar extends javax.swing.JFrame {
             direccion = listado[i].getDireccion();
             }
         }
-        System.out.println(documento);
-        System.out.println(nombres);
-        System.out.println(apellidos);
+       
         VentaEditar edit = new VentaEditar(documento, nombres, apellidos, telefono, direccion, correo);
         setVisible(false);
         
