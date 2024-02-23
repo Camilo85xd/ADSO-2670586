@@ -1,4 +1,5 @@
-package interfazcruddb;
+package principal;
+import principal.Persona;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -84,6 +85,38 @@ public class BaseDatos {
             }else{
             
                 return arreglo;
+                
+            }
+        }catch (SQLException ex) {
+            Logger.getLogger(BaseDatos.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+            
+        }
+    }
+    
+    public Persona BuscarPersona(String cedula){
+                     
+        try {
+            Persona encontrada = null;
+            String consulta = "SELECT * FROM personas WHERE cedula = '"+cedula+"'" ;
+            ResultSet registros = manipularDB.executeQuery(consulta);
+            registros.next();
+            
+            if(registros.getRow()==1){
+                
+                    
+                    String documento = registros.getString("cedula");
+                    String nombres = registros.getString("nombres");
+                    String apellidos = registros.getString("apellidos");
+                    String telefono = registros.getString("telefono");
+                    String correo = registros.getString("email");
+                    String direccion = registros.getString("direccion");
+                    
+                    encontrada = new Persona(documento, nombres, apellidos, telefono, correo, direccion);                                
+                return encontrada;
+            }else{
+            
+                return null;
                 
             }
         }catch (SQLException ex) {

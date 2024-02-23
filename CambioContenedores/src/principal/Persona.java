@@ -1,5 +1,5 @@
 
-package interfazcruddb;
+package principal;
 
 public class Persona {
     String documento;
